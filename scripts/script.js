@@ -87,6 +87,23 @@ function lancerJeu() {
             afficherProposition(listeProposition[i])
         })
     }
+    // получаем доступ ко всем елементам формы
+let form = document.querySelector(form)
+    // добавляем слушателя события при нажатии на сабмит
+form.addEventListener("submit", (event) => {
+    // обязательно нужно запретить обновление страницы до действия, поэтому используем preventDefault
+    event.preventDefault()
+// теперь выводим наши переменные
+    let baliseNom = document.getElementById("nom")
+    let nom = baliseNom.value
 
+    let baliseEmail = document.getElementById("email")
+    let email = baliseEmail.value
+    let scoreEmail = `${score} / ${i}`
+
+   afficherEmail(nom, email, scoreEmail)
+})
+    
+    
     afficherResultat(score, i)
 }
